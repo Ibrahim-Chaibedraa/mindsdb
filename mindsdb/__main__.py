@@ -65,7 +65,7 @@ if __name__ == '__main__':
     else:
         run_migration_separately = True
 
-    if not is_cloud and not run_migration_separately:
+    if not (is_cloud or run_migration_separately):
         print('Applying database migrations:')
         try:
             from mindsdb.migrations import migrate
